@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Kituorder"
+    }
+  },
+  "defaultProject": "Kituorder",
+  "cli": {
+    "analytics": "1e1c9692-fe35-4122-b047-0f0dd7b19081"
+  }
 }
