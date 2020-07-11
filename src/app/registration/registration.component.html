@@ -1,23 +1,29 @@
-<div class="container">
-    <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)" class="shadow p-5 mt-5 border-top">
-        <p class="font-weight-bold">User Registration</p>
+<div class="container-fluid">
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)" class="p-5 mt-5">
+        <p class="font-weight-bold">Kituorder User Registration</p>
         <div class="form-group">
             <label class="font-weight-bold">Email</label>
-            <input required email type="email" #email="ngModel" name="email" ngModel class="form-control">
-            <span *ngIf="email.errors?.required && email.touched" class="error">Email field is required</span>
-            <span *ngIf="email.errors?.email && email.touched" class="error">Email is invalid</span>
+            <input required email type="email" #email="ngModel" name="email" ngModel class="form-control col-md-6 col-lg-6">
+            <span *ngIf="email.errors?.required && email.touched" class="error">
+                Email field is required
+            </span>
+            <span *ngIf="email.errors?.email && email.touched" class="error">
+                Email is invalid
+            </span>
         </div>
-        
+
         <div class="form-group">
             <label class="font-weight-bold">Phone</label>
-            <input #phone="ngModel" required type="tel" name="phone" ngModel class="form-control">
+            <input #phone="ngModel" required type="tel" name="phone" ngModel class="form-control col-md-6 col-lg-6">
             <span *ngIf="phone.invalid && phone.touched" class="error">Phone number is required</span>
         </div>
         <div class="form-group">
             <label class="font-weight-bold">Password</label>
-            <input #password="ngModel" required type="password" name="password" ngModel class="form-control">
-            <span *ngIf="password.invalid && password.touched" class="error">Password is required</span>
+            <input #password="ngModel" minlength="8" required type="password" name="password" ngModel class="form-control col-md-6 col-lg-6">
+            <span *ngIf="password.errors?.required && password.touched" class="error">Password is required</span>
+            <span *ngIf="password.errors?.minlength && password.touched" class="error">Password must be atleast 8 characters</span>
+            
         </div>
-        <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">JOIN KITUORDER</button>
+        <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary"><i class="fa fa-user-plus"></i>JOIN KITUORDER</button>
     </form>
 </div>
