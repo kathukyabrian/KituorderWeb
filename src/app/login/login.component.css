@@ -1,4 +1,4 @@
-input.ng-invalid{
+input.ng-invalid.ng-touched{
     border: 2px solid red ;
 
 }
@@ -9,4 +9,5 @@ input.ng-valid{
 
 .error{
     color: red;
+    font-weight: bold;
 }

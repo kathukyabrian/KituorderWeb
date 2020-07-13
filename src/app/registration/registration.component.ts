@@ -11,9 +11,10 @@ export class RegistrationComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   onSubmit(data){
+    
     this.http.post("http://127.0.0.1:5000/register",data)
     .subscribe((res)=>{
-      console.warn("result",res);
+      console.log(res);
     })
   }
 
