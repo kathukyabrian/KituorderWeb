@@ -1,11 +1,10 @@
 <div>
-    <form #loginForm="ngForm" class="shadow p-5 mt-5 col-md-6 col-lg-6 offset-md-3 offset-lg-3" (ngSubmit)="onSubmit(loginForm.value)">
-        <p class="font-weight-bold">Kituorder Login</p>
+    <form #loginForm="ngForm" id="loginForm" class="shadow rounded-5 mb-3 p-5 mt-2 col-md-6 col-lg-6 offset-md-3 offset-lg-3" (ngSubmit)="onSubmit(loginForm.value)">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
             </div>
-            <input #email="ngModel" type="email" name="email" required email class="form-control" placeholder="email" ngModel>
+            <input #email="ngModel" type="email" name="email" required email class="form-control p-4" placeholder="email" ngModel>
         </div>
         <span *ngIf="email.errors?.required && email.touched" class="error">
             Email field is required
@@ -17,13 +16,16 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
               </div>
-            <input #password="ngModel" type="password" name="password" required minlength="8" class="form-control" placeholder="password" ngModel>
+            <input #password="ngModel" type="password" name="password" required minlength="8" class="form-control p-4" placeholder="password" ngModel>
         </div>
         <span *ngIf="password.errors?.required && password.touched" class="error">Password is required</span>
         <span *ngIf="password.errors?.minlength && password.touched" class="error">Password must be atleast 8 characters</span>
         <br>
-        <button type="submit" class="btn btn-secondary text-center"><i class="fa fa-sign-in"></i> PROCEED</button>
-        <br>
-        <a href="/register" class="text-danger font-weight-bold">No account?</a>
+        <button type="submit" class="btn btn-secondary text-center"><i class="fa fa-sign-in"></i> PROCEED TO DASHBOARD</button>
+        <br><br>
+        <i class="fa fa-arrow-down" (click)="showRegistration()">No account? Register</i>
     </form>
+    <div id="registrationform">
+            <app-registration></app-registration>
+    </div>
 </div>
