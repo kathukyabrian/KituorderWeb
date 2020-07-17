@@ -21,4 +21,6 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  orderimg:string="assets/compra-en-linea.svg";
+
 }

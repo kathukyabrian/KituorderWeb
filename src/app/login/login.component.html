@@ -1,5 +1,12 @@
-<div>
-    <form #loginForm="ngForm" id="loginForm" class="shadow rounded-5 mb-3 p-5 mt-2 col-md-6 col-lg-6 offset-md-3 offset-lg-3" (ngSubmit)="onSubmit(loginForm.value)">
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-6 col-lg-6 bg-info p-5 mb-0">
+        <h2 class="text-light font-weight-bold">KITUORDER</h2>
+        <a href="/register" class="btn btn-light">CREATE KITUORDER ACCOUNT</a>
+        <img class="img-fluid" [src]=orderimg>
+    </div>
+    <div class="col-md-6 col-lg-6">
+    <form #loginForm="ngForm" id="loginForm" class="shadow rounded-5 mb-3 p-5 mt-2" (ngSubmit)="onSubmit(loginForm.value)">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
@@ -21,11 +28,8 @@
         <span *ngIf="password.errors?.required && password.touched" class="error">Password is required</span>
         <span *ngIf="password.errors?.minlength && password.touched" class="error">Password must be atleast 8 characters</span>
         <br>
-        <button type="submit" class="btn btn-secondary text-center"><i class="fa fa-sign-in"></i> PROCEED TO DASHBOARD</button>
-        <br><br>
-        <i class="fa fa-arrow-down" (click)="showRegistration()">No account? Register</i>
+        <button type="submit" class="btn btn-secondary text-center"><i class="fa fa-sign-in"></i> PROCEED TO DASHBOARD</button>  
     </form>
-    <div id="registrationform">
-            <app-registration></app-registration>
     </div>
+</div>
 </div>

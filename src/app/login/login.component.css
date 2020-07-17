@@ -11,7 +11,3 @@ input.ng-valid{
     color: red;
     font-weight: bold;
 }
-
-#registrationform{
-    display: none;
-}

@@ -1,5 +1,12 @@
 <div class="container-fluid">
-    <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)" class="shadow p-5 mt-2 col-md-6 col-lg-6 offset-md-3 offset-lg-3 bg-transparent">
+    <div class="row">
+    <div class="col-md-6 col-lg-6 bg-info p-5">
+        <h2 class="text-light font-weight-bold">KITUORDER</h2>
+        <a href="/login" class="btn btn-light">I HAVE AN ACCOUNT</a>
+        <img class="img-fluid" [src]=orderimg>
+    </div>
+    <div class="col-md-6 col-lg-6 bg-light">
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)" class="mt-2 shadow p-5 bg-transparent">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
@@ -30,6 +37,8 @@
         <span *ngIf="password.errors?.required && password.touched" class="error">Password is required</span>
         <span *ngIf="password.errors?.minlength && password.touched" class="error">Password must be atleast 8 characters</span>
         <br>
-        <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-secondary"><i class="fa fa-user-plus"></i>JOIN KITUORDER</button>
+        <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-info"><i class="fa fa-user-plus"></i>JOIN KITUORDER</button>
     </form>
+    </div>
+    </div>
 </div>
